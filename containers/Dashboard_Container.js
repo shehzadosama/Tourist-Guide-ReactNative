@@ -7,7 +7,7 @@ import SignOutMiddleware from '../store/middlewares/SignOutMiddleware';
 import CurrentLocationMiddleware from '../store/middlewares/CurrentLocationMiddleware';
 import UpdateLocationMiddleware from '../store/middlewares/UpdateLocationMiddleware';
 function mapStateToProps(state) {
-    console.log(state.CurrentLoc.currentLoc);
+    // console.log(state.CurrentLoc.currentLoc);
     return {
      loc:  state.CurrentLoc.currentLoc
       

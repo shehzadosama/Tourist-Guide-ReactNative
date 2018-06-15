@@ -9,7 +9,7 @@ import RestaurantList_Component from '../components/RestaurantList_Component';
 // import UpdateLocationMiddleware from '../store/middlewares/UpdateLocationMiddleware';
 import RestaurantMiddlewares from '../store/middlewares/RestaurantMiddlewares';
 function mapStateToProps(state) {
-    console.log(state.Restaurants.restaurantList);
+    // console.log(state.Restaurants.restaurantList);
     return {
         restaurantList: state.Restaurants.restaurantList
     };
@@ -32,7 +32,7 @@ class RestaurantList_Container extends Component {
         this.props.getRestaurantList();
     }
     render() {
-        console.log(this.props.loc);
+        // console.log(this.props.loc);
         return <RestaurantList_Component currentLoc = {this.props.loc}restaurantList={this.props.restaurantList} getRestaurantList={this.props.getRestaurantList.bind(this)} />
     }
 }

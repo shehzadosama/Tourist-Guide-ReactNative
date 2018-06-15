@@ -7,6 +7,10 @@ export default class Actions {
     static LOC = "CURRENT_LOC";
     static UPDATE_LOC = "UPDATE_LOC";
     static RESTAURANTS = "RESTAURANTS";
+    static EMPTY_RESTAURANTS = "EMPTY_RESTAURANTS";
+    static EMPTY_HOSPITALS = "EMPTY_HOSPITALS";
+    static EMPTY_PARKS = "EMPTY_PARKS";
+    static EMPTY_HOTELS = "EMPTY_HOTELS";
     static HOSPITALS = "HOSPITALS";
     static PARKS = "PARKS";
     static HOTELS = "HOTELS";
@@ -26,6 +30,30 @@ export default class Actions {
         return {
             type: 'CURRENT_LOC',
             value: value
+        }
+    }
+    static emptyRestaurants() {
+        return {
+            type: 'EMPTY_RESTAURANTS',
+            // value: value
+        }
+    }
+    static emptyHospitals() {
+        return {
+            type: 'EMPTY_HOSPITALS',
+            // value: value
+        }
+    }
+    static emptyParks() {
+        return {
+            type: 'EMPTY_PARKS',
+            // value: value
+        }
+    }
+    static emptyHotels() {
+        return {
+            type: 'EMPTY_HOTELS',
+            // value: value
         }
     }
     static updateCurrentLoc(value) {

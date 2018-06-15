@@ -20,13 +20,14 @@ export default class PlaceDetails extends Component {
         this.state = {
 
             error: null,
-
+            name: this.props.initDestType.name,
             coords: [],
             initialPosition: {
                 latitude: this.props.initDestType.init.lat,
                 longitude: this.props.initDestType.init.lng,
                 latitudeDelta: 0.015,
                 longitudeDelta: 0.0121,
+
             },
             destinationPosition: {
                 latitude: this.props.initDestType.dest.lat,
@@ -53,7 +54,7 @@ export default class PlaceDetails extends Component {
         let url = `https://maps.googleapis.com/maps/api/directions/json?origin=${init}&destination=${dest}&key=AIzaSyCDQfwwG5sCBFsj_6A5IQOuHSDBNyuww40`;
 
         axios.get(url).then(({ data }) => {
-            console.log(data);
+            // console.log(data);
 
             let points = Polyline.decode(data.routes[0].overview_polyline.points);
             let coords = points.map((point, index) => {
@@ -63,7 +64,7 @@ export default class PlaceDetails extends Component {
                 }
             })
             this.setState({ coords: coords });
-            console.log(this.state.coords);
+            // console.log(this.state.coords);
 
 
         })
@@ -81,13 +82,13 @@ export default class PlaceDetails extends Component {
 
     render() {
 
-        console.log("Rendering Place Details");
-        console.log(this.state.coords);
-        console.log(this.state.initialPosition);
-        console.log(this.state.destinationPosition);
+        // console.log("Rendering Place Details");
+        // console.log(this.state.coords);
+        // console.log(this.state.initialPosition);
+        // console.log(this.state.destinationPosition);
 
-        console.log(this.props.initDestType);
-        console.log(this.state.type);
+        // console.log(this.props.initDestType);
+        // console.log(this.state.type);
 
         return (
 
@@ -100,7 +101,7 @@ export default class PlaceDetails extends Component {
                         </Button>
                     </Left>
                     <Body>
-                        <Title>Place Details</Title>
+                        <Title style={{ marginLeft: -70 }}>Navigation</Title>
 
                     </Body>
                 </Header >
@@ -127,12 +128,23 @@ export default class PlaceDetails extends Component {
                             strokeWidth={5}
                             geodesic={true}
                             coordinates={this.state.coords}
-                           // strokeColor="rgba(0,0,200,0.5)"
+                            // strokeColor="rgba(0,0,200,0.5)"
                             lineDashPattern={[47.12]}
                         />
                         <MapView.Marker
 
                             coordinate={this.state.initialPosition}
+                        //center={{ latitude: 24.814211,
+                        //longitude: 67.050390,}}
+                        //radius={50} strokeColor= {'#3478e5'}
+                        //title={marker.title}
+                        //description={marker.description}
+                        />
+                        <MapView.Marker
+                            pinColor={'green'}
+                            title={this.state.name}
+                            coordinate={this.state.destinationPosition}
+                       
                         //center={{ latitude: 24.814211,
                         //longitude: 67.050390,}}
                         //radius={50} strokeColor= {'#3478e5'}

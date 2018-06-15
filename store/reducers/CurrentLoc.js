@@ -11,12 +11,12 @@ function CurrentLoc(state = INITIAL_STATE, action) {
     case Actions.LOC:
 
      
-      console.log('In Current location reducer')
+      // console.log('In Current location reducer')
       return Object.assign({}, state, { currentLoc: action.value });
       break;
 
     case Actions.UPDATE_LOC:
-      console.log('In Current location reducer')
+      // console.log('In Current location reducer')
       return Object.assign({}, state, { currentLoc: action.value });
       break;
     

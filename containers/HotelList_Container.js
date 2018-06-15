@@ -9,7 +9,7 @@ import HotelList_Component from '../components/HotelList_Component';
 // import UpdateLocationMiddleware from '../store/middlewares/UpdateLocationMiddleware';
 import HotelMiddlewares from '../store/middlewares/HotelMiddlewares';
 function mapStateToProps(state) {
-    console.log(state.Hotels.hotelList);
+    // console.log(state.Hotels.hotelList);
     return {
         hotelList: state.Hotels.hotelList
     };
@@ -32,7 +32,7 @@ class HotelList_Container extends Component {
         this.props.getHotelList();
     }
     render() {
-        console.log(this.props.loc);
+        // console.log(this.props.loc);
         return <HotelList_Component currentLoc = {this.props.loc} hotelList={this.props.hotelList} getHotelList={this.props.getHotelList.bind(this)} />
     }
 }

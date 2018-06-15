@@ -6,10 +6,14 @@ export default class LoginMiddleware {
     static currentLoc() {
         return (dispatch) => {
 
-            console.log('in current loc middleware');
+            // console.log('in current loc middleware');
             navigator.geolocation.getCurrentPosition(
 
                 (position) => {
+                    dispatch(Action.emptyRestaurants());
+                    dispatch(Action.emptyHospitals());
+                    dispatch(Action.emptyParks());
+                    dispatch(Action.emptyHotels());
                     dispatch(Action.setCurrentLoc({
 
                         latitude: parseFloat(position.coords.latitude),
@@ -28,7 +32,7 @@ export default class LoginMiddleware {
 
 
                 },
-                { enableHighAccuracy: false, timeout: 20000, maximumAge: 1000 },
+                { enableHighAccuracy: false, timeout: 20000, maximumAge: 10000 },
 
 
             )

@@ -15,7 +15,7 @@ import App from './containers/App';
 import store from './store';
 import { Provider } from 'react-redux';
 import * as firebase from 'firebase';
-
+import SplashScreen from 'react-native-splash-screen'
 
 var config = {
   apiKey: "AIzaSyBPvF9fLQSLbUROqxwS2rHrBO8qdD9YA8U",

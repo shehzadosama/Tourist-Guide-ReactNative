@@ -23,13 +23,17 @@ export default class UpdateLocationMiddleware {
             //     region:null
             //   };
             // var region = null;
-            console.log('in update loc middleware');
+            // console.log('in update loc middleware');
             var obj = {
                 latitude: location.lat,
                 longitude:  location.lng,
                 latitudeDelta: 0.015,
                 longitudeDelta: 0.0121,
             };
+            dispatch(Action.emptyRestaurants());
+            dispatch(Action.emptyHospitals());
+            dispatch(Action.emptyParks());
+            dispatch(Action.emptyHotels());
             dispatch(Action.updateCurrentLoc(obj));
             // console.log(region),
             // dispatch(Action.setCurrentLoc(this.state.region))

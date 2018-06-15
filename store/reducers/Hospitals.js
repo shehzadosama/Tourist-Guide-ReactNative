@@ -3,7 +3,7 @@ import Actions from "../actions/Actions";
 // import {AsyncStorage} from 'react-native'
 
 const INITIAL_STATE = {
-hospitalList: []
+hospitalList: null
 }
 
 
@@ -12,10 +12,14 @@ function Hospitals(state = INITIAL_STATE, action) {
 
         case Actions.HOSPITALS:
 
-            console.log('HOSPITALS reducer')
+            // console.log('HOSPITALS reducer')
             return Object.assign({}, state, { hospitalList: action.value });
             break;
 
+            case Actions.EMPTY_HOSPITALS:
+            // console.log('Restaurant reducer')
+            return Object.assign({}, state, { hospitalList: null });
+            break;
 
 
 

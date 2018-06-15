@@ -6,7 +6,7 @@ import Login_Component from '../components/Login_Component';
 import LoginMiddleware from '../store/middlewares/LoginMiddleware';
 
 function mapStateToProps(state) {
-    console.log(state.Login.loggedInUser);
+    // console.log(state.Login.loggedInUser);
     return {
         user: state.Login.loggedInUser
 

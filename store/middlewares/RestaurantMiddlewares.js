@@ -21,12 +21,12 @@ export default class RestaurantMiddlewares {
 
     static getRestaurants(location) {
         return (dispatch) => {
-            console.log('in restaurant middleware');
-            console.log(location);
+            // console.log('in restaurant middleware');
+            // console.log(location);
             let url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location.latitude},${location.longitude}&radius=2000&type=restaurant&key=AIzaSyDTz0V5KDzGimKT1EaYSgwJ1UIcs7jcBAc`;
 
             axios.get(url).then(({ data }) => {
-                console.log(data.results);
+                // console.log(data.results);
                 dispatch(Action.getRestaurants(data.results));
             })
                 .catch((error) => {

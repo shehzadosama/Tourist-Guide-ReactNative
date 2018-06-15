@@ -7,11 +7,11 @@ export default class LoginMiddleware {
   static login(data) {
     var database = firebase.database().ref("/");
 
-    console.log("test ", data);
+    // console.log("test ", data);
     return (dispatch) => {
 
 
-      console.log(data.email, data.pass);
+      // console.log(data.email, data.pass);
       firebase.auth().signInWithEmailAndPassword(data.email, data.pass).then((res) => {
 
 

@@ -6,7 +6,7 @@ export default class SignUpMiddleware {
     static signUp(data) {
         var database = firebase.database().ref("/");
 
-        console.log("test ", data);
+        // console.log("test ", data);
         return (dispatch) => {
 
 

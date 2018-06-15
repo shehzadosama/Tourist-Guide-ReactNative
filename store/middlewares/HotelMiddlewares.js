@@ -21,12 +21,12 @@ export default class HotelMiddlewares {
 
     static getHotels(location) {
         return (dispatch) => {
-            console.log('in hotel middleware');
-            console.log(location);
+            // console.log('in hotel middleware');
+            // console.log(location);
             let url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location.latitude},${location.longitude}&radius=2000&type=establishment&keyword=hotel&key=AIzaSyDTz0V5KDzGimKT1EaYSgwJ1UIcs7jcBAc`;
 
             axios.get(url).then(({ data }) => {
-                console.log(data.results);
+                // console.log(data.results);
                 dispatch(Action.getHotels(data.results));
             })
                 .catch((error) => {

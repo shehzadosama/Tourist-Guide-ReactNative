@@ -9,7 +9,7 @@ import ParkList_Component from '../components/ParkList_Component';
 // import UpdateLocationMiddleware from '../store/middlewares/UpdateLocationMiddleware';
 import ParktMiddlewares from '../store/middlewares/ParktMiddlewares';
 function mapStateToProps(state) {
-    console.log(state.Parks.parkList);
+    // console.log(state.Parks.parkList);
     return {
         parkList: state.Parks.parkList
 }
@@ -31,7 +31,7 @@ class ParkList_Container extends Component {
         this.props.getParkList();
     }
     render() {
-        console.log(this.props.loc);
+        // console.log(this.props.loc);
         return <ParkList_Component currentLoc = {this.props.loc} parkList={this.props.parkList} getParkList={this.props.getParkList.bind(this)} />
     }
 }

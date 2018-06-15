@@ -3,7 +3,7 @@ import Actions from "../actions/Actions";
 // import {AsyncStorage} from 'react-native'
 
 const INITIAL_STATE = {
-    hotelList: []
+    hotelList:null
 }
 
 
@@ -11,10 +11,15 @@ function Hotels(state = INITIAL_STATE, action) {
     switch (action.type) {
         case Actions.HOTELS:
 
-            console.log('HOTELS reducer')
+            // console.log('HOTELS reducer')
             return Object.assign({}, state, { hotelList: action.value });
             break;
-     
+            case Actions.EMPTY_HOTELS:
+            // console.log('Restaurant reducer')
+            return Object.assign({}, state, { hotelList: null });
+            break;
+
+
 
 
 

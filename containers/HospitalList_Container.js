@@ -9,7 +9,7 @@ import Hospital_Component from '../components/Hospital_Component';
 // import UpdateLocationMiddleware from '../store/middlewares/UpdateLocationMiddleware';
 import HospitalMiddlewares from '../store/middlewares/HospitalMiddlewares';
 function mapStateToProps(state) {
-    console.log(state.Hospitals.hospitalList);
+    // console.log(state.Hospitals.hospitalList);
     return {
         hospitalList: state.Hospitals.hospitalList
     };
@@ -32,7 +32,7 @@ class HospitalList_Container extends Component {
         this.props.getHospitalList();
     }
     render() {
-        console.log(this.props.loc);
+        // console.log(this.props.loc);
         return <Hospital_Component currentLoc = {this.props.loc} hospitalList={this.props.hospitalList} getHospitalList={this.props.getHospitalList.bind(this)} />
     }
 }
